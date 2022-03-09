@@ -23,7 +23,7 @@ Initialize the class with configuration options:
 
 ```javascript
 <script>
-  const warningbeforeunload = new WarningBeforeUnload({
+  const unloadMessage = new WarningBeforeUnload({
     selector: 'form#myForm',
   });
 </script>
@@ -34,7 +34,10 @@ Initialize the class with configuration options:
 |selector|String|form|Set the HTML selector of your form.|
 |form|HTMLobject|false|Instead of using a selector you can set the HTML form object on your own.|
 |onInput|Boolean|false|Set to true if your want to apply warnings only when the user changed something on it’s own and to disable auto-detection for dynamic changes. This can be helpful if your form has changed dynamically after WarningBeforeUnload is loaded.|
-|onSubmit|Function|EventListener|Setup a callback function if you want to handle form submits on your own. To supress the warning on page leave set `warningbeforeunload.preventUnload = false` (eg. `warningbeforeunload.form.addEventListener('submit', () => warningbeforeunload.preventUnload = false)`)|
+|onSubmit|Function|EventListener|Setup a callback function if you want to handle form submits on your own. To supress the warning on page leave set `unloadMessage.preventUnload = false`. For example:
+```javascript
+unloadMessage.onSubmit = unloadMessage.form.addEventListener('submit', () => unloadMessage.preventUnload = false);
+```)|
 
 # Troubleshooting
 ### Warning appears without changing anything in the form.
@@ -48,7 +51,7 @@ window.addEventListener('load', () => {
 });
 ```
 
-### No warning appears
+### No warning appears.
 If the content of the form is changed programmatically don’t use option `onInput` or set it to false. Also be sure to initialize WarningBeforeUnload after the page is fully loaded as described above.
 
 ### Warnings are working only for the first form, but I have multiple.
