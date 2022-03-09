@@ -63,3 +63,6 @@ new WarningBeforeUnload({
     selector: 'form#myForm_2',
 });
 ```
+
+### How can I customize the warning message?
+This is not possible because of security reasons. WarningBeforeUnload relies on beforeunload and therefore it’s limited to the support of the browsers which don’t support a custom message anymore to prevent misusing it.
