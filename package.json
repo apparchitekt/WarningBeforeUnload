@@ -1,0 +1,25 @@
+{
+  "name": "WarningBeforeUnload",
+  "version": "1.0.0",
+  "description": "Alerts the user when leaving a page without saving the changes.",
+  "main": "WarningBeforeUnload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apparchitekt/WarningBeforeUnload.git"
+  },
+  "keywords": [
+    "beforeunload class",
+    "warning on page leave",
+    "warning beforeunload",
+    "alert on page leave"
+  ],
+  "author": "Nico Wenig",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apparchitekt/WarningBeforeUnload/issues"
+  },
+  "homepage": "https://github.com/apparchitekt/WarningBeforeUnload#readme"
+}
